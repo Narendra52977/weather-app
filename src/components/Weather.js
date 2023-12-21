@@ -15,9 +15,11 @@ export default function Weather() {
     JSON.parse(localStorage.getItem("weather"))
   );
   const [errorMessage, setErrorMessage] = useState();
+
   const handleChange = (e) => {
     setCity(e.target.value);
   };
+
   const handleClick = () => {
     setLoading(true);
     weatherApi({ city })
@@ -38,6 +40,7 @@ export default function Weather() {
         setLoading(false);
       });
   };
+  
   return (
     <Card
       sx={{
@@ -46,7 +49,9 @@ export default function Weather() {
         backgroundImage: `url("https://png.pngtree.com/background/20210709/original/pngtree-sky-cloudiness-weather-clouds-background-picture-image_481546.jpg")`,
       }}
     >
-      <Typography sx={{ fontSize: "24px" }}>Weather</Typography>
+      <Typography sx={{ fontSize: "24px", color: "mediumvioletred" }}>
+        Weather
+      </Typography>
       <Box
         sx={{
           display: "flex",
@@ -97,6 +102,7 @@ export default function Weather() {
                 </Box>
               </Box>
             </Box>
+            <Box>Weather Condition: {weatherData?.weather?.[0]?.main}</Box>
             <Box>Humidity: {weatherData.main.humidity}%</Box>
             <Box>Pressure: {weatherData.main.pressure}hPa</Box>
             <Box>Visibility: {weatherData.visibility / 1000}km</Box>
