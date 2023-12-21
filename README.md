@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Deployment Url
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was deployed in netlify. Link to application is [Weather](https://polite-duckanoo-113d32.netlify.app/).
 
 ## To run this project
 install all dependencies using "npm i"
